@@ -8,7 +8,7 @@
 	<groupId>com.flagstone</groupId>
 	<artifactId>transform</artifactId>
 	<packaging>jar</packaging>
-	<version>3.0.3-SNAPSHOT</version>
+	<version>3.0.3-SNAPSHOT-1</version>
 
 	<name>transform</name>
 	<description>Transform is an Open Source library for reading and writing Flash (.swf) files. The API gives you complete control over how files are created with access to all the features supported by the Flash Player but yet is still intuitive and easy to use.</description>
@@ -190,20 +190,20 @@
                     </execution>
                 </executions>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-                <version>1.1</version>
-				<executions>
-				  <execution>
-					<id>sign-artifacts</id>
-					<phase>verify</phase>
-					<goals>
-					  <goal>sign</goal>
-					</goals>
-				  </execution>
-				</executions>
-			</plugin>
+			<!--<plugin>-->
+				<!--<groupId>org.apache.maven.plugins</groupId>-->
+				<!--<artifactId>maven-gpg-plugin</artifactId>-->
+                <!--<version>1.1</version>-->
+				<!--<executions>-->
+				  <!--<execution>-->
+					<!--<id>sign-artifacts</id>-->
+					<!--<phase>verify</phase>-->
+					<!--<goals>-->
+					  <!--<goal>sign</goal>-->
+					<!--</goals>-->
+				  <!--</execution>-->
+				<!--</executions>-->
+			<!--</plugin>-->
 		</plugins>
 	</build>
 
