@@ -781,6 +781,13 @@ public final class DefineFont3 implements DefineTag {
         int tableEntry;
         int shapeLength;
 
+	    int tmpShapeLength = 0;
+	    for (final Shape shape : shapes) {
+		    tmpShapeLength += shape.prepareToEncode(context);
+	    }
+
+	    wideOffsets = (shapes.size() * 2 + tmpShapeLength) > Coder.USHORT_MAX;
+
         if (wideOffsets) {
             tableEntry = (count << 2) + 4;
         } else {
@@ -800,8 +807,7 @@ public final class DefineFont3 implements DefineTag {
 
         table[index++] = tableEntry;
 
-        wideOffsets = (shapes.size() * 2 + glyphLength)
-                > Coder.USHORT_MAX;
+
 
         length = 5;
         length += context.strlen(name);
